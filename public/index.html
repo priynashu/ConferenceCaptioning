@@ -1,29 +1,95 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>demo file</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login Form</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #f4f4f4;
+			background-image: linear-gradient(to bottom right, #faadad, #8f932a);
+		}
+
+		h2 {
+			color: #d64949;
+			margin-bottom: 20px;
+		}
+
+		form {
+			background: rgba(255, 255, 255, 0.8);
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			width: 300px;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		label {
+			font-weight: bold;
+			margin-bottom: 5px;
+			color: #333;
+		}
+
+		input[type="text"],
+		input[type="password"] {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border: none;
+			border-radius: 4px;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #45a049;
+		}
+
+		.error {
+			color: red;
+			margin-bottom: 10px;
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
-    <h2>HTML Forms</h2>
+	<form action="/submit" method="post">
+		<h2>HTML Form</h2>
+		<label for="fname">First Name:</label>
+		<input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
 
-<form action="/submit" method="post">
-  <label for="fname">Fname:</label><br>
-  <input type="text" id="fname" name="fname" placeholder="Enter your firstname"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname"  placeholder="Enter your lastname"><br>
-  <label for="stream">Stream:</label><br>
-  <input type="text" id="stream" name="stream" placeholder="enter stream name"><br><br>
-  <input type="submit" value="Submit">
-</form>
-<!-- <form action="/submit" method="post">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required>
-  
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required>
-  
-  <input type="submit" value="Submit">
-</form> -->
+		<label for="lname">Last Name:</label>
+		<input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
+
+		<label for="stream">Stream:</label>
+		<input type="text" id="stream" name="stream" placeholder="Enter stream name" required>
+
+    <label for="image">Image Url:</label>
+		<input type="text" id="image" name="image" placeholder="Enter image Url" required>
+    
+		<input type="submit" value="Submit">
+		<div class="error">
+			<!-- Display error message here -->
+		</div>
+	</form>
 </body>
 </html>
